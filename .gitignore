@@ -1,0 +1,15 @@
+__pycache__
+
+Include/
+Lib/
+Scripts/
+pyvenv.cfg
+
+aero-desktop/build
+aero-desktop/dist
+aero-desktop/session
+aero-desktop/aero.iss
+aero-desktop/main.spec
+
+AeroWeb/db.sqlite3
+AeroWeb/AeroWeb/settings.py
