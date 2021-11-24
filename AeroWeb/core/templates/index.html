@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<br>
+<div class="container">
+    <img src="{% static 'images/rocket.jpeg' %}" class="rounded mx-auto d-block" alt="Responsive image">
+    <br>
+    <div class="card text-center w-100" >
+        <div class="card-header">
+          AMTP Corp
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">AeroProject</h5>
+            <p class="card-text">Desktop Program</p>
+            <a href="download_file" class="btn btn-primary" download>Download</a>
+        </div>
+        <div class="card-footer text-muted">
+            ©Copyright2021
+        </div>
+      </div>
+</div>
+{% endblock %}

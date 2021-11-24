@@ -1,0 +1,10 @@
+body{
+    background-image: url(../images/back.png);
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.card-img-top{
+    width: 100px;
+    height: 100px;
+}
