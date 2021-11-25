@@ -1,3 +1,5 @@
+from datetime import datetime as dt
+
 from django.db import models
 
 class Users(models.Model):
@@ -7,11 +9,11 @@ class Users(models.Model):
     position = models.CharField(max_length=255, null=True, verbose_name="Должность")
     department = models.CharField(max_length=255, null=True, verbose_name="Отдел")
     password = models.CharField(max_length=255, null=True, verbose_name="Пароль")
-    created = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(editable=True, default=dt.now())
     is_active = models.BooleanField(default=False)
 
     def __str__(self):
-        return "<User: %s %s>" % (self.last_name, self.department,)
+        return "%s %s %s" % (self.last_name, self.first_name, self.middle_name,)
 
     class Meta:
         verbose_name = "User"
@@ -21,7 +23,10 @@ class Users(models.Model):
 class NotifyError(models.Model):
     last_name = models.CharField(max_length=255, null=True, verbose_name="Фамилия")
     text = models.TextField()
-    created = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(editable=True)
+
+    def __str__(self):
+        return "%s" % (self.last_name,)
 
     class Meta:
         verbose_name = "Error"
