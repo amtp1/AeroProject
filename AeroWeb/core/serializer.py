@@ -30,3 +30,7 @@ class UserLoginSerializer(serializers.Serializer):
 class UserRegistrationSerializer(serializers.Serializer):
     class Meta:
         model = Users
+
+class ErrorNotify(serializers.Serializer):
+    class Meta:
+        model = NotifyError
