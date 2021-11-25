@@ -54,18 +54,24 @@ class UserUpdateActive(ListAPIView):
     serializers_class = UserLoginSerializer
 
     def get(self, request, last_name: str, active: int):
-        user = Users.objects.get(last_name=last_name)
-        user.is_active = active
-        user.save()
-        return HttpResponse(True)
+        try:
+            user = Users.objects.get(last_name=last_name)
+            user.is_active = active
+            user.save()
+            return HttpResponse(dumps({"status": True}))
+        except Exception as e:
+            return HttpResponse(dumps({"status": False, "error_message": str(e)}))
 
 
 class NotifyErrorView(ListAPIView):
     serializers_class = NotifyError
 
     def get(self, request, last_name: str, text: str, created: None):
-        NotifyError.objects.create(last_name=last_name, text=text, created=created)
-        return HttpResponse(True)
+        try:
+            NotifyError.objects.create(last_name=last_name, text=text, created=created)
+            return HttpResponse(dumps({"status": True}))
+        except Exception as e:
+            return HttpResponse(dumps({"status": False, "error_message": str(e)}))
 
 
 def index(request):
