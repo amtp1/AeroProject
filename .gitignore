@@ -13,3 +13,4 @@ aero-desktop/main.spec
 
 AeroWeb/db.sqlite3
 AeroWeb/AeroWeb/settings.py
+AeroWeb/core/migrations
