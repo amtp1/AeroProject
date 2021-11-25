@@ -8,5 +8,6 @@ urlpatterns = [
     path("api/user-update-active/<str:last_name>/<int:active>", UserUpdateActive.as_view(), name="user-update-active"),
     path("api/user-register/<str:last_name>/<str:first_name>/<str:middle_name>/<str:position>/<str:department>/<str:password>/",
         UserRegistration.as_view(), name="user-registration"),
+    path("api/notify-error/<str:last_name>/<str:text>/<str:created>/", NotifyErrorView.as_view(), name="notify-error"),
     path("download_file/", download_file, name="download_file")
 ]
