@@ -16,3 +16,13 @@ class Users(models.Model):
     class Meta:
         verbose_name = "User"
         verbose_name_plural = "Users"
+
+
+class NotifyError(models.Model):
+    last_name = models.CharField(max_length=255, null=True, verbose_name="Фамилия")
+    text = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Error"
+        verbose_name_plural = "Errors"
